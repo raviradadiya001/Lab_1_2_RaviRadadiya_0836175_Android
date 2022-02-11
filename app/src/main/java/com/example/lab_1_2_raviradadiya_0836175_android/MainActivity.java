@@ -13,12 +13,12 @@ import android.widget.Toast;
 
 import com.example.lab_1_2_raviradadiya_0836175_android.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityMainBinding binding;
     SQLiteDatabase sqLiteDatabase;
 
-    EditText poname,podescr,poprice;
+    EditText poname, podescr, poprice;
     Button btnViewProduct;
 
     @Override
@@ -33,13 +33,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         poprice = findViewById(R.id.p_price);
 
         binding.btnAddProduct.setOnClickListener(this);
-        sqLiteDatabase = openOrCreateDatabase("product_db",MODE_PRIVATE,null);
+        sqLiteDatabase = openOrCreateDatabase("product_db", MODE_PRIVATE, null);
         createTable();
 
         btnViewProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ProductActivity.class);
+                Intent intent = new Intent(MainActivity.this, ProductActivity.class);
                 startActivity(intent);
             }
         });
@@ -57,18 +57,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch (view.getId())
-        {
+        switch (view.getId()) {
             case R.id.btn_add_product:
                 addProduct();
                 break;
-
-//            case R.id.btn_view_product:
-//                Toast.makeText(this, "Toast active", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(this,ProductActivity.class));
-//                break;
         }
-
 
 
     }
@@ -78,19 +71,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String descr = binding.pDesc.getText().toString().trim();
         String price = binding.pPrice.getText().toString().trim();
 
-        if(name.isEmpty()){
+        if (name.isEmpty()) {
             binding.pName.setError("Name field is empty");
             binding.pName.requestFocus();
             return;
         }
 
-        if(descr.isEmpty()){
+        if (descr.isEmpty()) {
             binding.pDesc.setError("Description field is empty");
             binding.pDesc.requestFocus();
             return;
         }
 
-        if(price.isEmpty()){
+        if (price.isEmpty()) {
             binding.pPrice.setError("Price field is empty");
             binding.pPrice.requestFocus();
             return;
@@ -103,8 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ResetPImage();
     }
 
-    private void ResetPImage()
-    {
+    private void ResetPImage() {
         poname.setText("");
         poprice.setText("");
         podescr.setText("");

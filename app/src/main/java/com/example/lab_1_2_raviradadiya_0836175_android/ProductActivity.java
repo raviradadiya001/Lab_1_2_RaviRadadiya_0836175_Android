@@ -20,13 +20,14 @@ public class ProductActivity extends AppCompatActivity {
     private SQLiteDatabase sqLiteDatabase;
 
     private List<ProductModel> productModelList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityProductBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        sqLiteDatabase = openOrCreateDatabase("product_db",MODE_PRIVATE,null);
+        sqLiteDatabase = openOrCreateDatabase("product_db", MODE_PRIVATE, null);
         productModelList = new ArrayList<>();
 
         loadProducts();
@@ -34,21 +35,21 @@ public class ProductActivity extends AppCompatActivity {
 
     private void loadProducts() {
         String sql = "SELECT * FROM product";
-        Cursor cursor = sqLiteDatabase.rawQuery(sql,null);
-        if (cursor.moveToFirst()){
+        Cursor cursor = sqLiteDatabase.rawQuery(sql, null);
+        if (cursor.moveToFirst()) {
             do {
                 productModelList.add(new ProductModel(
-                        cursor.getInt(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getDouble(3)
-                    )
+                                cursor.getInt(0),
+                                cursor.getString(1),
+                                cursor.getString(2),
+                                cursor.getDouble(3)
+                        )
                 );
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
             cursor.close();
         }
 
-        ProductAdapter productAdapter = new ProductAdapter(this,R.layout.list_product,productModelList,sqLiteDatabase);
+        ProductAdapter productAdapter = new ProductAdapter(this, R.layout.list_product, productModelList, sqLiteDatabase);
         binding.lvProduct.setAdapter(productAdapter);
     }
 }

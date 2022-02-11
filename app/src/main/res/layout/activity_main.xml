@@ -8,11 +8,11 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:orientation="vertical"
-        android:id="@+id/ll1"
         android:padding="16dp">
 
 
@@ -21,8 +21,8 @@
             android:layout_height="wrap_content"
             android:text="@string/add_new_product"
             android:textAlignment="center"
-            android:textStyle="bold"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textStyle="bold" />
 
 
         <EditText
@@ -32,8 +32,7 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:hint="@string/enter_product_name"
-            android:minHeight="48dp"
-             />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/p_desc"
@@ -41,8 +40,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="@string/enter_product_description"
-            android:minHeight="48dp"
-            />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/p_price"
@@ -50,8 +48,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="@string/enter_product_price"
-            android:minHeight="48dp"
-             />
+            android:minHeight="48dp" />
 
 
     </LinearLayout>
@@ -59,24 +56,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ll1"
         android:layout_centerVertical="true"
         android:orientation="horizontal"
-        android:layout_below="@+id/ll1"
         android:padding="16dp">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_product"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@string/add_product"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:id="@+id/btn_add_product"/>
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_view_product"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@string/view_products"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:id="@+id/btn_view_product"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 

@@ -33,7 +33,7 @@ public class ProductAdapter extends ArrayAdapter {
                           @NonNull List<ProductModel> productModelList,
                           SQLiteDatabase sqLiteDatabase
     ) {
-        super(context, resource,productModelList);
+        super(context, resource, productModelList);
         this.context = context;
         this.layoutRes = layoutRes;
         this.productModelList = productModelList;
@@ -42,10 +42,10 @@ public class ProductAdapter extends ArrayAdapter {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View v = convertView;
-        if (v == null) v = inflater.inflate(layoutRes,null);
+        if (v == null) v = inflater.inflate(layoutRes, null);
         TextView nameTV = v.findViewById(R.id.row_name);
         TextView descrTV = v.findViewById(R.id.row_descr);
         TextView priceTV = v.findViewById(R.id.row_price);
@@ -79,7 +79,7 @@ public class ProductAdapter extends ArrayAdapter {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 String sql = "DELETE FROM product WHERE id = ?";
-                sqLiteDatabase.execSQL(sql,new Integer[]{productModel.getId()});
+                sqLiteDatabase.execSQL(sql, new Integer[]{productModel.getId()});
                 loadProduct();
             }
         });
@@ -95,7 +95,7 @@ public class ProductAdapter extends ArrayAdapter {
     private void updateProduct(ProductModel productModel) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.product_update_dialog,null );
+        View view = layoutInflater.inflate(R.layout.product_update_dialog, null);
         builder.setView(view);
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
@@ -115,19 +115,19 @@ public class ProductAdapter extends ArrayAdapter {
                 String descr = descrP.getText().toString().trim();
                 String price = priceP.getText().toString().trim();
 
-                if(name.isEmpty()){
+                if (name.isEmpty()) {
                     nameP.setError("Name field is empty");
                     nameP.requestFocus();
                     return;
                 }
 
-                if(descr.isEmpty()){
+                if (descr.isEmpty()) {
                     descrP.setError("Description field is empty");
                     descrP.requestFocus();
                     return;
                 }
 
-                if(price.isEmpty()){
+                if (price.isEmpty()) {
                     priceP.setError("Price field is empty");
                     priceP.requestFocus();
                     return;
@@ -136,10 +136,10 @@ public class ProductAdapter extends ArrayAdapter {
                 String sql = "UPDATE product SET name = ?, descr = ? ,price = ? WHERE id=?";
                 sqLiteDatabase.execSQL(sql,
                         new String[]{
-                        name,
-                        descr,
-                        price ,
-                        String.valueOf(productModel.getId())}
+                                name,
+                                descr,
+                                price,
+                                String.valueOf(productModel.getId())}
                 );
 
                 loadProduct();
@@ -150,9 +150,9 @@ public class ProductAdapter extends ArrayAdapter {
 
     private void loadProduct() {
         String sql = "SELECT * FROM product";
-        Cursor cursor = sqLiteDatabase.rawQuery(sql,null);
+        Cursor cursor = sqLiteDatabase.rawQuery(sql, null);
         productModelList.clear();
-        if (cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             do {
                 productModelList.add(new ProductModel(
                                 cursor.getInt(0),
@@ -161,15 +161,14 @@ public class ProductAdapter extends ArrayAdapter {
                                 cursor.getDouble(3)
                         )
                 );
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
             cursor.close();
         }
         notifyDataSetChanged();
     }
 
     @Override
-    public int getCount()
-    {
+    public int getCount() {
         return productModelList.size();
     }
 }
