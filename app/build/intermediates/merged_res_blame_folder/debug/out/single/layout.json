@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/raviradadiya/Desktop/Lab_1_2_RaviRadadiya_0836175_Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_product.xml",
+        "source": "/Users/raviradadiya/Desktop/Lab_1_2_RaviRadadiya_0836175_Android/app/src/main/res/layout/activity_product.xml"
+    },
+    {
+        "merged": "/Users/raviradadiya/Desktop/Lab_1_2_RaviRadadiya_0836175_Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/product_update_dialog.xml",
+        "source": "/Users/raviradadiya/Desktop/Lab_1_2_RaviRadadiya_0836175_Android/app/src/main/res/layout/product_update_dialog.xml"
+    },
+    {
+        "merged": "/Users/raviradadiya/Desktop/Lab_1_2_RaviRadadiya_0836175_Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/list_product.xml",
+        "source": "/Users/raviradadiya/Desktop/Lab_1_2_RaviRadadiya_0836175_Android/app/src/main/res/layout/list_product.xml"
+    },
+    {
+        "merged": "/Users/raviradadiya/Desktop/Lab_1_2_RaviRadadiya_0836175_Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/raviradadiya/Desktop/Lab_1_2_RaviRadadiya_0836175_Android/app/src/main/res/layout/activity_main.xml"
+    }
+]

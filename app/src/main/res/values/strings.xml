@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Lab_1_2_RaviRadadiya_0836175_Android</string>
+    <string name="add_new_product">Add New Product</string>
+    <string name="enter_product_name">Enter Product Name</string>
+    <string name="enter_product_description">Enter Product Description</string>
+    <string name="enter_product_price">Enter Product Price</string>
+    <string name="add_product">Add product</string>
+    <string name="view_products">View Products</string>
+    <string name="row_name">Iphone Pro</string>
+    <string name="row_descr">Phone with good camera</string>
+    <string name="row_price">$5000</string>
+    <string name="btn_update">Update</string>
+    <string name="btn_delete">Delete</string>
+    <string name="update_product">Update Product</string>
+    <string name="update_product_button">Update</string>
 </resources>
